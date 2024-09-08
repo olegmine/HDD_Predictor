@@ -1,0 +1,8 @@
+setuptools~=74.1.2
+pandas~=2.2.2
+numpy~=1.26.4
+joblib~=1.4.2
+matplotlib~=3.9.2
+tensorflow~=2.17.0
+scikit-learn~=1.5.1
+tqdm~=4.66.5
