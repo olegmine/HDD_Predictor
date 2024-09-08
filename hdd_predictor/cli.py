@@ -45,7 +45,7 @@ def main():
     subparsers = parser.add_subparsers(dest="command")
 
     # Подкоманда обучения модели
-    train_parser = subparsers.add_parser("train", help="Обучение модели")
+    train_parser = subparsers.add_parser("train", help="Обучение модели,,данные беруться из hdd_predictor/data/raw И сохраняются вhdd_predictor/models")
     train_parser.add_argument("input_file", type=str, help="Путь к файлу для обучения")
 
     # Подкоманда дообучения модели
@@ -53,14 +53,14 @@ def main():
     retrain_parser.add_argument("input_file", type=str, help="Путь к файлу для дообучения")
 
     # Подкоманда предсказания
-    predict_parser = subparsers.add_parser("predict", help="Предсказание")
+    predict_parser = subparsers.add_parser("predict", help="Предсказание Оставить датафрейм с именем input_data.csv в дирректории hdd_predictor")
     predict_parser.add_argument("input_file", type=str, help="Путь к файлу для предсказания")
 
     # Подкоманда информации о модели
     model_info_parser = subparsers.add_parser("info", help="Информация о модели")
 
     # Подкоманда автоматического дообучения
-    auto_retrain_parser = subparsers.add_parser("auto_retrain", help="Автоматическое дообучение модели")
+    auto_retrain_parser = subparsers.add_parser("auto_retrain", help="""Автоматическое дообучение модели,данные беруться из hdd_predictor/data/raw """)
     auto_retrain_parser.add_argument("--interval", type=int, default=3600, help="Интервал дообучения в секундах")
 
     args = parser.parse_args()
